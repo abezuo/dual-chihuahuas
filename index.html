@@ -1,171 +1,208 @@
-
-<!doctype html>
-    <html lang= "en-US">
-    <head>
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"> 
     <title>angel or devil?</title>
     <meta name="description" content="choose your fighter and seal your fate...">
-    <link href="styles.css" rel="stylesheet" />
-      <style>
-
+    <link href="styles.css" rel="stylesheet">
+    <style>
       body {
-            min-height: 100vh;
-            transition: background 1s ease;
-        }
-        html {
-    height: 100vh;
-            }
-/* text select */
-            p1::selection {
-  background: pink;
-}
-            p2::selection {
-  background: #ce6f3f;
-}
-{
+        min-height: 100vh;
+        transition: background 1s ease;
+      }
+
+      html {
+        height: 100vh;
+      }
 
 
-}
-/* animation classes */
+      /* animation classes */
       .shake:hover {
-      animation: shake 0.25s infinite cubic-bezier(.36,.07,.19,.97) both;
-      transform: translate3d(0, 0, 0);
-      backface-visibility: hidden;
-      perspective: 1000px;
-    }
+        animation: shake 0.25s infinite cubic-bezier(.36, .07, .19, .97) both;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+      }
 
-    .bounce:hover {
-    animation: shake 3s infinite ;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
+      .bounce:hover {
+        animation: shake 3s infinite;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
 
-  }
+      }
 
-{
-  }
+      #good {
+        font-family: "good", sans-serif;
+        font-size: 30px;
+        color: #af5274;
+        text-indent: 30px;
+        text-transform: lowercase;
+        text-decoration: none
+      }
 
-@font-face {
-font-family: "good";
-src: url("KINKIE.woff2") format("woff2")
-}
+      #evil {
+        font-family: "evil", sans-serif;
+        font-size: 50px;
+        color: #411414;
+        text-indent: 30px;
+        text-transform: uppercase;
+        text-decoration: none
+      }
 
-@font-face {
-font-family: "evil";
-src: url("megax.woff2") format("woff2")
-}
+      #good::selection {
+        background: pink;
+      }
 
-
-p1 {
-  font-family: "good", sans-serif;
-  font-size: 30px ;
-  color: #af5274;
-  text-indent: 30px;
-  text-transform: lowercase;
-  text-decoration: none
-
-}
-
-        p2 {
-  font-family: "evil", sans-serif;
-  font-size: 50px;
-  color: #411414;
-  text-indent: 30px;
-  text-transform: uppercase;
-  text-decoration: none
-}
-
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-@keyframes bounce {
- 0% { transform: translateY(0) }
- 25% { transform: translateY(10px) }
- 50% { transform: translateY(-10px) }
- 75% { transform: translateY(10px) }
- 100% { transform: translateY(0) }
-}
+      #evil::selection {
+        background: #ce6f3f;
+      }
 
 
-</style>
-    </head>
-<body>
-<center>
-   <br><br><br>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-		<p1>
-      i can be ur angel.....
-  </p1>
-  <br> <br> <br>
-   <div id="image1" class="bounce">
-    <img src="calmchi.png">
-    <audio id="audio1">
-    <source src="kkstroll.mp3">
-    </audio>
-  </div>
-  <br><br><br> <br><br><br>
-<p2>
-OR UR DEVIL....!!!
-  </p2>
+      @font-face {
+        font-family: "good";
+        src: url("KINKIE.woff2") format("woff2")
+      }
 
-  <div id="image2" class="shake">
-    <img src="madchi-removebg.png">
-    <audio id="audio2">
-    <source src="doomost.mp3">
-    </audio>
-  </div>
-		 <img src="https://d2w9rnfcy7mm78.cloudfront.net/9987911/original_026fc0b61e323aff95685b0331d518da.gif?1608653922" height= 100% width= 100%>
-  <script>
-    const audio1 = $("#audio1")[0];
-    $("#image1").mouseenter(function() {
-      audio1.play();
-      audio1.loop = true;
-    });
-    $("#image1").mouseleave(function() {
-      audio1.pause();
-    });
-  </script>
+      @font-face {
+        font-family: "evil";
+        src: url("megax.woff2") format("woff2")
+      }
 
-  <script>
-    var audio2 = $("#audio2")[0];
-    $("#image2").mouseenter(function() {
-      audio2.play();
-      audio2.loop = true;
-    });
-    $("#image2").mouseleave(function() {
-      audio2.pause();
-    });
-  </script>
+      @keyframes shake {
+        0% {
+          transform: translate(1px, 1px) rotate(0deg);
+        }
 
-  <script>
-        var body = document.getElementsByTagName('body')[0];
+        10% {
+          transform: translate(-1px, -2px) rotate(-1deg);
+        }
+
+        20% {
+          transform: translate(-3px, 0px) rotate(1deg);
+        }
+
+        30% {
+          transform: translate(3px, 2px) rotate(0deg);
+        }
+
+        40% {
+          transform: translate(1px, -1px) rotate(1deg);
+        }
+
+        50% {
+          transform: translate(-1px, 2px) rotate(-1deg);
+        }
+
+        60% {
+          transform: translate(-3px, 1px) rotate(0deg);
+        }
+
+        70% {
+          transform: translate(3px, 1px) rotate(-1deg);
+        }
+
+        80% {
+          transform: translate(-1px, -1px) rotate(1deg);
+        }
+
+        90% {
+          transform: translate(1px, 2px) rotate(0deg);
+        }
+
+        100% {
+          transform: translate(1px, -2px) rotate(-1deg);
+        }
+      }
+
+      @keyframes bounce {
+        0% {
+          transform: translateY(0)
+        }
+
+        25% {
+          transform: translateY(10px)
+        }
+
+        50% {
+          transform: translateY(-10px)
+        }
+
+        75% {
+          transform: translateY(10px)
+        }
+
+        100% {
+          transform: translateY(0)
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <br><br><br>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+      <p id="good">
+        i can be ur angel.....
+      </p>
+      <br> <br> <br>
+      <div id="image1" class="bounce">
+        <img src="calmchi.png" alt="k">
+        <audio id="audio1">
+          <source src="kkstroll.mp3">
+        </audio>
+      </div>
+      <br><br><br> <br><br><br>
+      <p id="evil">
+        OR UR DEVIL....!!!
+      </p>
+
+      <div id="image2" class="shake">
+        <img src="madchi-removebg.png" alt="l">
+        <audio id="audio2">
+          <source src="doomost.mp3">
+        </audio>
+      </div>
+      <img src="https://d2w9rnfcy7mm78.cloudfront.net/9987911/original_026fc0b61e323aff95685b0331d518da.gif?1608653922" alt="sitting chihuahua" height="100%" width="100%">
+      <script>
+        /* global $ */
+        const audio1 = $("#audio1")[0];
+        $("#image1").mouseenter(function() {
+          audio1.play();
+          audio1.loop = true;
+        });
+        $("#image1").mouseleave(function() {
+          audio1.pause();
+        });
+
+        let audio2 = $("#audio2")[0];
+        $("#image2").mouseenter(function() {
+          audio2.play();
+          audio2.loop = true;
+        });
+        $("#image2").mouseleave(function() {
+          audio2.pause();
+        });
+        
+        let body = document.getElementsByTagName('body')[0];
         body.style.backgroundColor = '#ecdce2';
 
         // trigger this function every time the user scrolls
-        window.onscroll = function (event) {
-            var scroll = window.pageYOffset;
-            if (scroll < 400) {
-                // pink
-                body.style.backgroundColor = '#ecdce2';
-            } else if (scroll >= 400 && scroll < 2000) {
-                 // red
-                body.style.backgroundColor = '#983030';
+        window.onscroll = function() {
+          let scroll = window.pageYOffset;
+          if (scroll < 400) {
+            // pink
+            body.style.backgroundColor = '#ecdce2';
+          } else if (scroll >= 400 && scroll < 2000) {
+            // red
+            body.style.backgroundColor = '#983030';
 
 
-            }
+          }
         }
-    </script>
-</center>
-
+      </script>
+    </center>
 </body>
+</html>
